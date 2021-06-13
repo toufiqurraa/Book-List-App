@@ -68,6 +68,7 @@ class UI {
 class Store {
   static getBooks() {
     let books;
+
     if (localStorage.getItem("books") === null) {
       books = [];
     } else {
@@ -98,6 +99,7 @@ class Store {
 
   static removeBook(isbn) {
     const books = Store.getBooks();
+
     books.forEach(function (book, index) {
       if (book.isbn === isbn) {
         books.splice(index, 1);
